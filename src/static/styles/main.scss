@@ -1,0 +1,18 @@
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/_mixins.scss';
+@import '~bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+
+// can add Boostrap overrides, additional Sass/CSS below...
+
+.theta {
+  background-color: #00afc6;
+  font-style: italic;
+}
+.eth {
+  background-color: #FFA500;
+  font-style: italic;
+}
+.ths {
+  background-color: #640280;
+  font-style: italic;
+}
