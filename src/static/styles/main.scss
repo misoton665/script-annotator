@@ -4,6 +4,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 // can add Boostrap overrides, additional Sass/CSS below...
 
+// group 8
 .theta {
   background-color: #00afc6;
   font-style: italic;
@@ -15,4 +16,53 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .ths {
   background-color: #640280;
   font-style: italic;
+}
+
+// group 9
+.content_word {
+  font-style: bold;
+  color: #0000ff;
+}
+
+// group 10
+#answer {
+  border: red 2px solid;
+}
+
+#answer3 {
+  border: blue 2px solid;
+}
+
+#answer4 {
+  border: green 2px solid;
+}
+
+.Reg{
+  background-color: #FFFACD;
+  padding: 0.3em;
+}
+
+.button-primary1{
+  width: 70px;
+  margin-right:0.5em;
+}
+
+.button-primary2{
+  width: 70px;
+  margin-right:0.5em;
+}
+
+.slash3{
+  color: blue;
+  font-weight: bold;
+}
+
+.slash2{
+  color: green;
+  font-weight: bold;
+}
+
+.slash1{
+  color: red;
+  font-weight: bold;
 }

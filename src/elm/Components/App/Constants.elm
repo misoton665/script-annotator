@@ -1,21 +1,25 @@
 module Components.App.Constants exposing (..)
 
 
+type alias AnnotatorId =
+    String
+
+
 type Annotator
-    = Annotator Int String
+    = Annotator AnnotatorId String
 
 
-type alias Annotators =
-    { sample : Annotator
-    , soundTh : Annotator
-    }
-
-
-annotators : Annotators
+annotators : List Annotator
 annotators =
-    { sample = Annotator 1 "Sample"
-    , soundTh = Annotator 2 "Sound \"th\""
-    }
+    [ Annotator "sample" "Sample"
+    , Annotator "soundth" "Sound \"th\""
+    , Annotator "sounded" "Sound \"ed\""
+    , Annotator "link2" "Link 2"
+    , Annotator "contentword" "ContentWord"
+    , Annotator "intonationfinal" "Intonation-final"
+    , Annotator "pausing" "Pausing"
+    , Annotator "sounds" "Sound \"s\""
+    ]
 
 
 type alias ViewPhrases =

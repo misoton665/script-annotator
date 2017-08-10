@@ -9,6 +9,9 @@ import Html.Attributes exposing (class, id, value)
 import Html.Events exposing (onClick)
 
 
+-- Content root view
+
+
 view : Model -> Html Msg
 view model =
     div []
@@ -26,10 +29,7 @@ viewPageTitle =
 
 viewAnnotatorButtons : Model -> Html Msg
 viewAnnotatorButtons model =
-    div [ class "annotatorButtons" ]
-        [ annotatorToggle annotators.sample model
-        , annotatorToggle annotators.soundTh model
-        ]
+    div [ class "annotatorButtons" ] <| List.map (flip annotatorToggle <| model) annotators
 
 
 viewInputArea : Html Msg

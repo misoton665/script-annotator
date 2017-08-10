@@ -1,5 +1,6 @@
 port module Components.App.Ports exposing (..)
 
+import Components.App.Constants exposing (AnnotatorId)
 import Components.App.Msg exposing (Msg(AppliedAnnotation))
 
 
@@ -10,7 +11,7 @@ subscriptions =
         ]
 
 
-port applyAnnotation : Int -> Cmd msg
+port applyAnnotation : AnnotatorId -> Cmd msg
 
 
 port appliedAnnotation : (() -> msg) -> Sub msg

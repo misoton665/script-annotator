@@ -3,5 +3,6 @@ function run () {
 }
 
 module.exports = {
+    id: "sample",
     run: run
 };
