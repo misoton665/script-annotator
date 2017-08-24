@@ -2,6 +2,8 @@
 
 // group 5
 
+var runner = require('./annotationRunner.js');
+
 GINGER.onlineGrammarChecker = (function () {
     var unknownError = "<span class='errorMessage'>There is a problem with your internet connection, please try again later.</span>", emptyInputError = "<span class='errorMessage'>Type your own sentence...</span>", emptyInputErrorMobile = "<span class='errorMessage'>Add text here...</span>";
     var noSuggestionText = "(No Suggestions)";

@@ -1,4 +1,5 @@
 // group 9
+var runner = require('./annotationRunner.js');
 
 //This regular expression matches content words
 //This regular expression doesn't match grammer words.
@@ -10,14 +11,15 @@ function wrapContentWordClass(word) {
   //content wordかどうかを判定
   if (gram_words.test(word.replace(/'/, '').replace(/"/, '').replace(/”/, '').replace(/\./, '').replace(/\?/, '').replace(/!/, ''))) {
     // word が grammer wordだった場合
-    document.getElementById('result').innerHTML = word;
+    return word;
   } else {
     // word が content wordだった場合 
-    document.getElementById('result').innerHTML = '<span class="content_word">' + word + '</span>';
+    return '<span class="content_word">' + word + '</span>';
   }
 }
 
 module.exports = {
   id: "contentword",
-  run: wrapContentWordClass
+  run: wrapContentWordClass,
+  type: runner.types.word
 }

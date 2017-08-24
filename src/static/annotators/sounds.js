@@ -1,5 +1,7 @@
 // group 
 
+var runner = require('./annotationRunner.js');
+
 // color
 var s = '<span class=\'eth\'>s</span>';
 var z = '<span class=\'ths\'>s</span>';
@@ -70,9 +72,7 @@ function detector(mystring) {
                 break; // ADDED: 二度置換しないように、ループを抜けます
                 // temp = j;
                 // finish loop if a[i].search(b[j]) != -1
-                console.log("hug");
             }
-            console.log("pom");
         }
         //    if(temp != -1){
         //    a[i] = a[i].replace(b[temp],c[temp]);
@@ -84,11 +84,11 @@ function detector(mystring) {
         processedText += (a[i]); // CHANGED: 置換した単語たちを連結
     } //end loop
 
-    document.getElementById('result').innerHTML = processedText;
-
+    return processedText;
 }
 
 module.exports = {
     id: "sounds",
-    run: detector
+    run: detector,
+    type: runner.types.word
 }

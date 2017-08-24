@@ -1,3 +1,5 @@
+var runner = require('./annotationRunner.js');
+
 function annotate(plainText) {
     var exceptCases = ["Mr.", "Ms.", "Mrs.", "Miss.", "Mt.", "N.Y.", "Prof."];
 
@@ -34,10 +36,11 @@ function annotate(plainText) {
 
     // Newline to <br>
     text = text.replace(/\n/g, "<br>");
-    document.getElementById('result').innerHTML = text;
+    return text;
 };
 
 module.exports = {
     id: "pausing",
-    run: annotate
+    run: annotate,
+    type: runner.types.all
 }

@@ -5,6 +5,7 @@ require('../../node_modules/bootstrap-sass/assets/javascripts/bootstrap.js');   
 
 // annotators
 var annotators = require('./annotators.js');
+var runner = require('./annotators/annotationRunner.js');
 
 // inject bundled Elm app into div#main
 var Elm = require('../elm/Main');
@@ -15,7 +16,24 @@ app.ports.applyAnnotation.subscribe(function (id) {
 
     annotators.modules.forEach(function (annotator) {
         if (annotator.id == id) {
-            annotator.run(input);
+            runner.run(annotator, input);
         }
     });
+});
+
+app.ports.applyMultiAnnotations.subscribe(function (ids) {
+    var input = document.getElementById('input').value;
+
+    var annos = [];
+    ids.forEach(function(id) {
+        annotators.modules.forEach(function (annotator) {
+            if (annotator.id == id) {
+                annos.push(annotator);
+            }
+        });
+    });
+
+    console.log(annos);
+
+    runner.runMulti(annos, input);
 });

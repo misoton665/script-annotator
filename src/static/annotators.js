@@ -1,6 +1,7 @@
 
 module.exports = {
     modules: [
+        {id: "default", run: function(){}},
         require('./annotators/sample.js'),
         require('./annotators/soundth.js'),
         require('./annotators/link2.js'),

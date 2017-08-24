@@ -4,6 +4,57 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 // can add Boostrap overrides, additional Sass/CSS below...
 
+// main
+.main-frame {
+    margin: 8px;
+}
+
+button {
+    outline: none;
+    cursor: pointer;
+}
+
+#input {
+    font-size: 20px;
+    padding: 4px;
+    height: 200px;
+    width: 80%;
+}
+
+#result {
+    font-size: 20px;
+    height: 200px;
+    width: 80%;
+    border: solid 1px gray;
+}
+
+.annotator-buttons {
+    padding: 16px;
+}
+
+.annotator-toggle {
+  padding: 6px;
+  margin: 2px;
+  background-color: white;
+}
+
+.annotator-toggle:hover {
+  background-color: whitesmoke;
+}
+
+.annotator-toggle-on {
+  width: auto;
+  color: orangered;
+  border: solid 1px orangered;
+  border-radius: 4px;
+}
+
+.annotator-toggle-off {
+  color: gray;
+  border: solid 1px gray;
+  border-radius: 4px;
+}
+
 // group 8
 .theta {
   background-color: #00afc6;

@@ -1,5 +1,7 @@
 // Developed by Group 10 in Patterns-and-Language in 2017
 
+var runner = require('./annotationRunner.js');
+
 function finder(word) {
   console.log("finder");
   var tRegex = /ced|fed|ked|ped|sed|xed|hed/;
@@ -17,10 +19,11 @@ function finder(word) {
     result = word.replace(/ed/g, '<span class=\'theta\'>ed</span>');
   }
 
-  document.getElementById('result').innerHTML = result;
+  return result;
 }
 
 module.exports = {
   id: "sounded",
-  run: finder
+  run: finder,
+  type: runner.types.word
 }

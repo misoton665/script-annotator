@@ -1,9 +1,12 @@
 // Developed by Group 8 in Patterns-and-Language in 2017
 
+var runner = require('./annotationRunner.js');
+
 function checkPron(word_input) {
   let re_eth = /(the$)|(ther$)|(th[aeiou][^aeiou])/;
   let re_not_eth = /(th.n)/
   let re_ths = /ths$/;
+  let re_th = /th/;
   let word = word_input;
 
   if (word.match(/th/) == null) {
@@ -13,13 +16,15 @@ function checkPron(word_input) {
     word = word.replace(/th/g, '<span class=\'eth\'>th</span>');
   } else if (word.match(re_ths)) {
     word = word.replace(/ths/g, '<span class=\'ths\'>th</span>');
-  } else {
+  } else if (word.match(re_th)) {
     word = word.replace(/th/g, '<span class=\'theta\'>th</span>');
   }
-  document.getElementById('result').innerHTML = word;
+
+  return word;
 }
 
 module.exports = {
   id: "soundth",
-  run: checkPron
+  run: checkPron,
+  type: runner.types.word
 };

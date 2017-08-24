@@ -1,14 +1,19 @@
 module Components.App.Model exposing (..)
 
-import Components.App.Constants exposing (Annotator)
+import Components.App.Annotator exposing (AnnotatorId)
 
 
 type alias Model =
-    { enabledAnnotator : List Annotator
+    { enabledAnnotatorIds : List AnnotatorId
     }
 
 
 initialModel : Model
 initialModel =
-    { enabledAnnotator = []
+    { enabledAnnotatorIds = []
     }
+
+
+isEnabledAnnotatorId : AnnotatorId -> Model -> Bool
+isEnabledAnnotatorId id model =
+    List.any ((==) id) model.enabledAnnotatorIds

@@ -1,4 +1,5 @@
 // 
+var runner = require('./annotationRunner.js');
 
 function myfunc(sentence) {
   var R = ['Do', 'Does', 'Did', 'Is', 'Are', 'Was', 'Were', 'Can', 'Would', 'Could', 'Shall', 'Should', 'Must', 'Oh'];
@@ -28,11 +29,12 @@ function myfunc(sentence) {
     }
   }
   if (flg == 0) tmp += bun.slice(bunlen);
-  document.getElementById('result').innerHTML = tmp;
+  return tmp;
 
 }
 
 module.exports = {
   id: "intonationfinal",
-  run: myfunc
+  run: myfunc,
+  type: runner.types.all
 }

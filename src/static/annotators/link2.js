@@ -1,5 +1,7 @@
 // group ?
 
+var runner = require('./annotationRunner.js');
+
 function annotate(text) {
   regexs = [];
   regexs[0] = /(i|y|igh|sea|tea|be|maybe|ee|he|she|ie|we|ye|[2-9]0) (a|e|i|o[^(ne)]|u|hon|w[^hr]|y)/gmi;
@@ -15,10 +17,11 @@ function annotate(text) {
     text = text.replace(regexs[i], '$1<font color="' + colors[i] + '">_</font>$2');
   }
 
-  document.getElementById('result').innerHTML = text;
+  return text;
 }
 
 module.exports = {
   id: "link2",
-  run: annotate
+  run: annotate,
+  type: runner.types.all
 };

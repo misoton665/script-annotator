@@ -1,13 +1,14 @@
 port module Components.App.Ports exposing (..)
 
-import Components.App.Constants exposing (AnnotatorId)
-import Components.App.Msg exposing (Msg(AppliedAnnotation))
+import Components.App.Annotator exposing (AnnotatorId)
+import Components.App.Msg exposing (Msg(AppliedAnnotation, AppliedMultiAnnotations))
 
 
 subscriptions : Sub Msg
 subscriptions =
     Sub.batch
         [ appliedAnnotation AppliedAnnotation
+        , appliedMultiAnnotations AppliedMultiAnnotations
         ]
 
 
@@ -15,3 +16,9 @@ port applyAnnotation : AnnotatorId -> Cmd msg
 
 
 port appliedAnnotation : (() -> msg) -> Sub msg
+
+
+port applyMultiAnnotations : List AnnotatorId -> Cmd msg
+
+
+port appliedMultiAnnotations : (() -> msg) -> Sub msg
