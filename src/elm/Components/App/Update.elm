@@ -11,7 +11,11 @@ update : Msg -> Model -> ( Model, Cmd msg )
 update msg model =
     case msg of
         ApplyAnnotation id ->
-            { model | enabledAnnotatorIds = toggleAnnotator id model } ! [ applyAnnotation id ]
+            let
+                updatedIds =
+                    toggleAnnotator id model
+            in
+                { model | enabledAnnotatorIds = updatedIds } ! [ applyMultiAnnotations updatedIds ] --!  [ applyAnnotation id ]
 
         ApplyMultiAnnotations ->
             model ! [ applyMultiAnnotations model.enabledAnnotatorIds ]
@@ -32,7 +36,7 @@ toggleAnnotator id model =
         beDisable =
             List.filter ((/=) id) model.enabledAnnotatorIds
     in
-        if isEnabled then
-            beDisable
-        else
-            beEnable
+    if isEnabled then
+        beDisable
+    else
+        beEnable
