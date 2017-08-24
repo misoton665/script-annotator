@@ -29,8 +29,7 @@ defaultAnnotator =
 
 annotators : List Annotator
 annotators =
-    [ make "sample" "Sample"
-    , make "soundth" "Sound \"th\""
+    [ make "soundth" "Sound \"th\""
     , make "sounded" "Sound \"ed\""
     , make "link2" "Link 2"
     , make "contentword" "ContentWord"

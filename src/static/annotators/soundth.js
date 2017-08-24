@@ -3,21 +3,21 @@
 var runner = require('./annotationRunner.js');
 
 function checkPron(word_input) {
-  let re_eth = /(the$)|(ther$)|(th[aeiou][^aeiou])/;
-  let re_not_eth = /(th.n)/
-  let re_ths = /ths$/;
-  let re_th = /th/;
-  let word = word_input;
+  var reeth = /(the$)|(ther$)|(th[aeiou][^aeiou])/;
+  var renoteth = /(th.n)/
+  var reths = /ths$/;
+  var reth = /th/;
+  var word = word_input;
 
   if (word.match(/th/) == null) {
     word = word;
   } else if (word == 'lefthand' || word == 'righthand') {
-  } else if (word.match(re_eth) != null && word.match(re_not_eth) == null) {
-    word = word.replace(/th/g, '<span class=\'eth\'>th</span>');
-  } else if (word.match(re_ths)) {
-    word = word.replace(/ths/g, '<span class=\'ths\'>th</span>');
-  } else if (word.match(re_th)) {
-    word = word.replace(/th/g, '<span class=\'theta\'>th</span>');
+  } else if (word.match(reeth) != null && word.match(renoteth) == null) {
+    word = word.replace(/th/g, '<span class=\'th1\'>th</span>');
+  } else if (word.match(reths)) {
+    word = word.replace(/ths/g, '<span class=\'th2\'>th</span>');
+  } else if (word.match(reth)) {
+    word = word.replace(/th/g, '<span class=\'th3\'>th</span>');
   }
 
   return word;
@@ -26,5 +26,6 @@ function checkPron(word_input) {
 module.exports = {
   id: "soundth",
   run: checkPron,
-  type: runner.types.word
+  type: runner.types.word,
+  priority: 4
 };

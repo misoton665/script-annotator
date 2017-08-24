@@ -5789,21 +5789,45 @@ button {
   border: solid 1px gray;
   border-radius: 4px; }
 
-.theta {
-  background-color: #00afc6;
+.th1 {
+  background-color: lightsalmon;
   font-style: italic; }
 
-.eth {
-  background-color: #FFA500;
+.th2 {
+  background-color: lightblue;
   font-style: italic; }
 
-.ths {
-  background-color: #640280;
+.th3 {
+  background-color: lightgreen;
+  font-style: italic; }
+
+.ed1 {
+  background-color: lightsalmon;
+  font-style: italic; }
+
+.ed2 {
+  background-color: lightblue;
+  font-style: italic; }
+
+.ed3 {
+  background-color: lightgreen;
+  font-style: italic; }
+
+.s1 {
+  background-color: lightsalmon;
+  font-style: italic; }
+
+.s2 {
+  background-color: lightblue;
+  font-style: italic; }
+
+.s3 {
+  background-color: lightgreen;
   font-style: italic; }
 
 .content_word {
   font-style: bold;
-  color: #0000ff; }
+  color: darkcyan; }
 
 #answer {
   border: red 2px solid; }
@@ -5827,13 +5851,13 @@ button {
   margin-right: 0.5em; }
 
 .slash3 {
-  color: blue;
+  color: #44F;
   font-weight: bold; }
 
 .slash2 {
-  color: green;
+  color: #44F;
   font-weight: bold; }
 
 .slash1 {
-  color: red;
+  color: #44F;
   font-weight: bold; }

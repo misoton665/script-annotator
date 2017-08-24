@@ -1,8 +1,11 @@
 
+function compairAnnotators(a, b) {
+    return a.priority - b.priority;
+}
+
 module.exports = {
     modules: [
-        {id: "default", run: function(){}},
-        require('./annotators/sample.js'),
+        {id: "default", run: function(){}, type: 0, priority: 0},
         require('./annotators/soundth.js'),
         require('./annotators/link2.js'),
         require('./annotators/contentword.js'),
@@ -10,5 +13,5 @@ module.exports = {
         require('./annotators/sounds.js'),
         require('./annotators/intonationfinal.js'),
         require('./annotators/pausing.js')
-    ]
+    ].sort(compairAnnotators)
 }

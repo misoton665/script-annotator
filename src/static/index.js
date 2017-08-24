@@ -25,8 +25,8 @@ app.ports.applyMultiAnnotations.subscribe(function (ids) {
     var input = document.getElementById('input').value;
 
     var annos = [];
-    ids.forEach(function(id) {
-        annotators.modules.forEach(function (annotator) {
+    annotators.modules.forEach(function (annotator) {
+        ids.forEach(function(id) {
             if (annotator.id == id) {
                 annos.push(annotator);
             }

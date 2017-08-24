@@ -2,6 +2,10 @@
 var runner = require('./annotationRunner.js');
 
 function myfunc(sentence) {
+  if (sentence == '') {
+    return sentence;
+  }
+
   var R = ['Do', 'Does', 'Did', 'Is', 'Are', 'Was', 'Were', 'Can', 'Would', 'Could', 'Shall', 'Should', 'Must', 'Oh'];
   var bun = sentence;
   bunlen = 0;
@@ -28,6 +32,7 @@ function myfunc(sentence) {
       else if (flg == 2) tmp += ' ⤵️ ';
     }
   }
+
   if (flg == 0) tmp += bun.slice(bunlen);
   return tmp;
 
@@ -36,5 +41,6 @@ function myfunc(sentence) {
 module.exports = {
   id: "intonationfinal",
   run: myfunc,
-  type: runner.types.all
+  type: runner.types.all,
+  priority: 1
 }

@@ -23,5 +23,6 @@ function annotate(text) {
 module.exports = {
   id: "link2",
   run: annotate,
-  type: runner.types.all
+  type: runner.types.all,
+  priority: 0
 };

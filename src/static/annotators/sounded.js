@@ -3,7 +3,6 @@
 var runner = require('./annotationRunner.js');
 
 function finder(word) {
-  console.log("finder");
   var tRegex = /ced|fed|ked|ped|sed|xed|hed/;
 
   var iRegex = /aed|eed|ied|oed|ued|bed|ged|jed|led|med|ned|ged|red|ved|wed|yed|zed/;
@@ -12,11 +11,11 @@ function finder(word) {
 
   var result = word;
   if (word.match(tRegex)) {
-    result = word.replace(/ed/g, '<span class=\'eth\'>ed</span>');
+    result = word.replace(/ed/g, '<span class=\'ed1\'>ed</span>');
   } else if (word.match(iRegex)) {
-    result = word.replace(/ed/g, '<span class=\'ths\'>ed</span>');
+    result = word.replace(/ed/g, '<span class=\'ed2\'>ed</span>');
   } else if (word.match(dRegex)) {
-    result = word.replace(/ed/g, '<span class=\'theta\'>ed</span>');
+    result = word.replace(/ed/g, '<span class=\'ed3\'>ed</span>');
   }
 
   return result;
@@ -25,5 +24,6 @@ function finder(word) {
 module.exports = {
   id: "sounded",
   run: finder,
-  type: runner.types.word
+  type: runner.types.word,
+  priority: 5
 }
