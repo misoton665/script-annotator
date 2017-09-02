@@ -57,7 +57,6 @@ function annotate(annotator, text) {
 function run(annotator, text) {
     var result = annotate(annotator, text);
     
-    console.log(result);
     document.getElementById('result').innerHTML = result;
 }
 
@@ -68,7 +67,6 @@ function runMulti(annos, text) {
         result = annotate(annotator, result);
     });
     
-    console.log(result);
     document.getElementById('result').innerHTML = result;
 }
 
