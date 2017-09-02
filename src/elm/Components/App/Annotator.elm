@@ -31,6 +31,7 @@ annotators : List Annotator
 annotators =
     [ make "soundth" "Sound \"th\""
     , make "sounded" "Sound \"ed\""
+    , make "link1" "Link 1"
     , make "link2" "Link 2"
     , make "contentword" "ContentWord"
     , make "intonationfinal" "Intonation-final"
