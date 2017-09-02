@@ -22,3 +22,6 @@ port applyMultiAnnotations : List AnnotatorId -> Cmd msg
 
 
 port appliedMultiAnnotations : (() -> msg) -> Sub msg
+
+
+port speakInputText : () -> Cmd msg

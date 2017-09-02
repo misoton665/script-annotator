@@ -37,3 +37,10 @@ app.ports.applyMultiAnnotations.subscribe(function (ids) {
 
     runner.runMulti(annos, input);
 });
+
+app.ports.speakInputText.subscribe(function () {
+    var input = document.getElementById('input').value;
+    var suu = new SpeechSynthesisUtterance(input);
+    suu.lang = 'en-US';
+    speechSynthesis.speak(suu);
+});

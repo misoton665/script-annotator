@@ -8,4 +8,5 @@ type Msg
     | AppliedAnnotation ()
     | ApplyMultiAnnotations
     | AppliedMultiAnnotations ()
+    | SpeakInputText
     | NoOp

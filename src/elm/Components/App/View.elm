@@ -15,6 +15,7 @@ view model =
     div [ class "main-frame" ]
         [ viewPageTitle
         , viewAnnotatorButtons model
+        , viewSpeakingButton
         , viewInputArea
         , viewResultArea
         ]
@@ -31,6 +32,11 @@ viewAnnotatorButtons : Model -> Html Msg
 viewAnnotatorButtons model =
     div [ class "annotator-buttons" ] <|
         List.map (flip annotatorToggle <| model) annotators
+
+
+viewSpeakingButton : Html Msg
+viewSpeakingButton =
+    button [ onClick SpeakInputText ] [ text "Speak" ]
 
 
 viewInputArea : Html Msg

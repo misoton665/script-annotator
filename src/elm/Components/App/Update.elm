@@ -3,7 +3,7 @@ module Components.App.Update exposing (..)
 import Components.App.Annotator as Annotator exposing (AnnotatorId)
 import Components.App.Model exposing (Model, isEnabledAnnotatorId)
 import Components.App.Msg exposing (..)
-import Components.App.Ports exposing (applyAnnotation, applyMultiAnnotations)
+import Components.App.Ports as Ports
 import List.Extra as ListEx
 
 
@@ -15,10 +15,14 @@ update msg model =
                 updatedIds =
                     toggleAnnotator id model
             in
-                { model | enabledAnnotatorIds = updatedIds } ! [ applyMultiAnnotations updatedIds ] --!  [ applyAnnotation id ]
+            { model | enabledAnnotatorIds = updatedIds } ! [ Ports.applyMultiAnnotations updatedIds ]
 
+        --!  [ applyAnnotation id ]
         ApplyMultiAnnotations ->
-            model ! [ applyMultiAnnotations model.enabledAnnotatorIds ]
+            model ! [ Ports.applyMultiAnnotations model.enabledAnnotatorIds ]
+
+        SpeakInputText ->
+            model ! [ Ports.speakInputText () ]
 
         _ ->
             model ! []
