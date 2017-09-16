@@ -1,7 +1,7 @@
 module Components.App.Update exposing (..)
 
-import Components.App.Annotator as Annotator exposing (AnnotatorId)
-import Components.App.Model exposing (Model, isEnabledAnnotatorId)
+import Components.App.Annotator as Annotator
+import Components.App.Model exposing (AnnotatorId, Model, isEnabledAnnotatorId)
 import Components.App.Msg exposing (..)
 import Components.App.Ports as Ports
 import List.Extra as ListEx

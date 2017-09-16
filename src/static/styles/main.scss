@@ -4,6 +4,40 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 // can add Boostrap overrides, additional Sass/CSS below...
 
+.hover-item {
+  background-color: #555;
+  color: #eee;
+  display: inline;
+  padding: 8px;
+
+  top: 100px;
+  left: 100px;
+
+  animation-name: moveUp;
+  animation-duration: 0.3s;
+  animation-fill-mode:both;
+
+  position: fixed;
+}
+
+.hover-item:hover {
+  background-color: #eee;
+  color: #555;
+  display: inline;
+  padding: 8px;
+}
+
+@keyframes moveUp {
+  0% {
+    margin-top: 50px;
+    opacity: 0;
+  }
+  100% {
+    margin-top: 0px;
+    opacity: 1;
+  }
+}
+
 // main
 .main-frame {
     margin: 8px;

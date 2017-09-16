@@ -1,6 +1,10 @@
 module Components.App.Model exposing (..)
 
-import Components.App.Annotator exposing (AnnotatorId)
+import Html exposing (Html)
+
+
+type alias AnnotatorId =
+    String
 
 
 type alias Model =

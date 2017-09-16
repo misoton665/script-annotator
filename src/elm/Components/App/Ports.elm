@@ -1,6 +1,6 @@
 port module Components.App.Ports exposing (..)
 
-import Components.App.Annotator exposing (AnnotatorId)
+import Components.App.Model exposing (AnnotatorId)
 import Components.App.Msg exposing (Msg(AppliedAnnotation, AppliedMultiAnnotations))
 
 

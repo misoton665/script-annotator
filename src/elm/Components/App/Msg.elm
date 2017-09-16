@@ -1,6 +1,6 @@
 module Components.App.Msg exposing (..)
 
-import Components.App.Annotator exposing (AnnotatorId)
+import Components.App.Model exposing (AnnotatorId)
 
 
 type Msg

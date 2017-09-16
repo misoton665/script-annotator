@@ -1,8 +1,8 @@
 module Components.App.View exposing (..)
 
-import Components.App.Annotator exposing (annotators)
+import Components.App.Annotator as Annotator exposing (Annotator)
 import Components.App.AnnotatorToggleView exposing (annotatorToggle)
-import Components.App.Constants exposing (viewPhrases)
+import Components.App.Constants exposing (annotators, viewPhrases)
 import Components.App.Model exposing (Model)
 import Components.App.Msg exposing (..)
 import Html exposing (Html, button, div, h1, h2, p, text, textarea)
@@ -18,6 +18,7 @@ view model =
         , viewSpeakingButton
         , viewInputArea
         , viewResultArea
+        , viewAnnotationHints model
         ]
 
 
@@ -51,3 +52,13 @@ viewResultArea =
     div [ class "result-area" ]
         [ p [ id "result" ] []
         ]
+
+
+viewAnnotationHints : Model -> Html Msg
+viewAnnotationHints model =
+    let
+        annotatorHints =
+            model.enabledAnnotatorIds
+                |> List.map (.hintHtml << (flip Annotator.find) annotators)
+    in
+    div [ class "annotation-hints" ] annotatorHints
