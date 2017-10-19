@@ -44,10 +44,3 @@ app.ports.speakInputText.subscribe(function () {
     suu.lang = 'en-US';
     speechSynthesis.speak(suu);
 });
-
-$('div.result-area').on('click', function(e) {
-    console.log('screen=' + e.screenX + ',' + e.screenY);
-    // console.log('page=' + e.pageX + ',' + e.pageY);
-    // console.log('client=' + e.clientX + ',' + e.clientY);
-    // console.log('offset=' + e.offsetX + ',' + e.offsetY);
-});

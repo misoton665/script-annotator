@@ -59,6 +59,12 @@ viewAnnotationHints model =
     let
         annotatorHints =
             model.enabledAnnotatorIds
-                |> List.map (.hintHtml << (flip Annotator.find) annotators)
+                |> List.map (.hintHtml << flip Annotator.find annotators)
+                |> List.reverse
     in
     div [ class "annotation-hints" ] annotatorHints
+
+
+viewButtonHistory : Model -> Html Msg
+viewButtonHistory model =
+    div [] []

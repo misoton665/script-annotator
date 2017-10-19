@@ -4,27 +4,17 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 // can add Boostrap overrides, additional Sass/CSS below...
 
-.hover-item {
-  background-color: #555;
-  color: #eee;
-  display: inline;
-  padding: 8px;
-
-  top: 100px;
-  left: 100px;
-
-  animation-name: moveUp;
-  animation-duration: 0.3s;
-  animation-fill-mode:both;
-
-  position: fixed;
+.hint {
+    margin: 4px;
+    padding: 8px;
+    background: #ddd;
+    display: inline-block;
+    border-radius: 0.3em;
 }
 
-.hover-item:hover {
-  background-color: #eee;
-  color: #555;
-  display: inline;
-  padding: 8px;
+.color {
+    padding-right: 8px;
+    font-size: 20px;
 }
 
 @keyframes moveUp {
@@ -48,18 +38,33 @@ button {
     cursor: pointer;
 }
 
-#input {
+.input-area {
     font-size: 20px;
-    padding: 4px;
+    margin: 0 auto;
+    margin-bottom: 8px;
     height: 200px;
     width: 80%;
 }
 
-#result {
+#input {
+    padding: 4px;
+    height: 100%;
+    width: 100%;
+}
+
+.result-area {
     font-size: 20px;
+    padding: 4px;
+    margin: 0 auto;
     height: 200px;
     width: 80%;
+    overflow: scroll;
     border: solid 1px gray;
+}
+
+.annotation-hints {
+    margin: 0 auto;
+    width: 80%;
 }
 
 .annotator-buttons {
@@ -91,48 +96,54 @@ button {
 
 // group 8
 .th1 {
-  background-color: lightsalmon;
+  background-color: lightcoral;
   font-style: italic;
 }
+
 .th2 {
-  background-color: lightblue;
+  background-color: lightcyan;
   font-style: italic;
 }
+
 .th3 {
-  background-color: lightgreen;
+  background-color: lightpink;
   font-style: italic;
 }
 
 .ed1 {
-  background-color: lightsalmon;
+  background-color: #cc99ff;
   font-style: italic;
 }
+
 .ed2 {
-  background-color: lightblue;
-  font-style: italic;
-}
-.ed3 {
   background-color: lightgreen;
   font-style: italic;
 }
 
+.ed3 {
+  background-color: lightseagreen;
+  font-style: italic;
+}
+
 .s1 {
+  background-color: lightsteelblue;
+  font-style: italic;
+}
+
+.s2 {
   background-color: lightsalmon;
   font-style: italic;
 }
-.s2 {
-  background-color: lightblue;
-  font-style: italic;
-}
+
 .s3 {
-  background-color: lightgreen;
+  background-color: lightskyblue;
   font-style: italic;
 }
 
 // group 9
 .content_word {
   font-style: bold;
-  color: darkcyan;
+  font-size: 1.2em;
 }
 
 // group 10

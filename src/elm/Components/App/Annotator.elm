@@ -2,7 +2,8 @@ module Components.App.Annotator exposing (..)
 
 import Components.App.Model exposing (AnnotatorId)
 import Components.App.Msg exposing (Msg)
-import Html exposing (Html, text)
+import Html exposing (Html, div, span, text)
+import Html.Attributes exposing (style)
 import List.Extra as ListEx
 
 
