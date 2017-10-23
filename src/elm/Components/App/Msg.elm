@@ -5,6 +5,7 @@ import Components.App.Model exposing (AnnotatorId)
 
 type Msg
     = ApplyAnnotation AnnotatorId
+    | AnnotateRhythm String
     | AppliedAnnotation ()
     | ApplyMultiAnnotations
     | AppliedMultiAnnotations ()

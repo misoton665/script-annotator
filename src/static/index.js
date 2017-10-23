@@ -16,7 +16,7 @@ app.ports.applyAnnotation.subscribe(function (id) {
 
     annotators.modules.forEach(function (annotator) {
         if (annotator.id == id) {
-            runner.run(annotator, input);
+            runner.run(app, annotator, input);
         }
     });
 });
@@ -35,7 +35,7 @@ app.ports.applyMultiAnnotations.subscribe(function (ids) {
 
     console.log(annos);
 
-    runner.runMulti(annos, input);
+    runner.runMulti(app, annos, input);
 });
 
 app.ports.speakInputText.subscribe(function () {
