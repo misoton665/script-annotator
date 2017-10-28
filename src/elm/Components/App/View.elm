@@ -5,8 +5,8 @@ import Components.App.AnnotatorToggleView exposing (annotatorToggle)
 import Components.App.Constants exposing (annotators, viewPhrases)
 import Components.App.Model exposing (Model)
 import Components.App.Msg exposing (..)
-import Html exposing (Html, button, div, h1, h2, p, text, textarea)
-import Html.Attributes exposing (class, id, value)
+import Html exposing (Html, button, div, h1, h2, img, p, span, text, textarea)
+import Html.Attributes exposing (class, id, placeholder, src, value)
 import Html.Events exposing (onClick, onInput)
 
 
@@ -24,8 +24,11 @@ view model =
 
 viewPageTitle : Html Msg
 viewPageTitle =
-    h2 [ class "page-title" ]
-        [ text viewPhrases.pageTitle
+    div [ class "page-header" ]
+        [ img [ class "page-logo", src "./static/img/logo.png" ] []
+        , h2 [ class "page-title" ]
+            [ text viewPhrases.pageTitle
+            ]
         ]
 
 
@@ -37,13 +40,13 @@ viewAnnotatorButtons model =
 
 viewSpeakingButton : Html Msg
 viewSpeakingButton =
-    button [ onClick SpeakInputText ] [ text "Speak" ]
+    button [ class "listen-button",  onClick SpeakInputText ] [ text viewPhrases.listenButton ]
 
 
 viewInputArea : Html Msg
 viewInputArea =
     div [ class "input-area" ]
-        [ textarea [ id "input", value "", onInput (\_ -> ApplyMultiAnnotations) ] []
+        [ textarea [ id "input", placeholder "", value "", onInput (\_ -> ApplyMultiAnnotations) ] []
         ]
 
 

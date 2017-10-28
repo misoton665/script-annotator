@@ -23,6 +23,11 @@ symbolIcon s color =
     span [ class "color", style [ ( "color", color ) ] ] [ text s ]
 
 
+boldSymbolIcon : String -> String -> Html Msg
+boldSymbolIcon s color =
+    span [ class "color", style [ ( "color", color ), ( "font-weight", "bold" ) ] ] [ text s ]
+
+
 colorPallet : String -> Html Msg
 colorPallet =
     symbolIcon "■"

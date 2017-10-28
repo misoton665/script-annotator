@@ -17,7 +17,6 @@ update msg model =
             in
             { model | enabledAnnotatorIds = updatedIds } ! [ Ports.applyMultiAnnotations updatedIds ]
 
-        --!  [ applyAnnotation id ]
         ApplyMultiAnnotations ->
             model ! [ Ports.applyMultiAnnotations model.enabledAnnotatorIds ]
 
