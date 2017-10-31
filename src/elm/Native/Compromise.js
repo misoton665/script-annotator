@@ -1,4 +1,4 @@
-var _misoton665$pal$Native_Compromise = function () {
+var _misoton665$scriptannotator$Native_Compromise = function () {
 
 function nouns(text) {
     var nouns = nlp(text).nouns().out('text');

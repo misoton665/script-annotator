@@ -1,15 +1,20 @@
 module Components.App.Update exposing (..)
 
 import Components.App.Annotator as Annotator
+import Components.App.Constants exposing (annotatorIds)
 import Components.App.Model exposing (AnnotatorId, Model, isEnabledAnnotatorId)
 import Components.App.Msg exposing (..)
 import Components.App.Ports as Ports
+import Compromise.Components.Parse as Compromise
 import List.Extra as ListEx
 
 
 update : Msg -> Model -> ( Model, Cmd msg )
 update msg model =
     case msg of
+        AnnotateRhythm text ->
+            model ! [ Ports.onAnnotated <| Compromise.parseString text ]
+
         ApplyAnnotation id ->
             let
                 updatedIds =

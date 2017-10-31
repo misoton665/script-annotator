@@ -1,4 +1,4 @@
-module Components.Parse exposing (..)
+module Compromise.Components.Parse exposing (..)
 
 import Compromise
 import Html exposing (..)
@@ -29,6 +29,20 @@ parse txt =
     div [] <| List.reverse parsedSentence
 
 
+parseString : String -> String
+parseString txt =
+    let
+        -- #をつけた文字列
+        markedText =
+            markText txt
+
+        -- "#This is a #pen ." -> ["#This", "is", "a", "#pen", "."]
+        markedWords =
+            String.split " " markedText
+    in
+    List.foldl (\x acc -> acc ++ " " ++ x) "" <| List.map toLargeIfMarkedString markedWords
+
+
 
 -- 一文字目が#なら大きく表示するHTMLタグに、そうでなければ普通サイズで表示するHTMLタグに変換
 
@@ -44,6 +58,19 @@ toLargeIfMarked word =
 
         _ ->
             text ""
+
+
+toLargeIfMarkedString : String -> String
+toLargeIfMarkedString word =
+    case String.uncons word of
+        Just ( '#', txt ) ->
+            toLargeFontTextString <| String.fromList <| List.filter ((/=) '#') <| String.toList txt
+
+        Just ( h, txt ) ->
+            toNormalFontTextString <| String.fromChar h ++ txt
+
+        _ ->
+            ""
 
 
 
@@ -138,6 +165,11 @@ toLargeFontText txt =
     span [ style [ ( "font-size", "140%" ) ] ] [ text txt ]
 
 
+toLargeFontTextString : String -> String
+toLargeFontTextString txt =
+    "<span style=\"background: #FF0\">" ++ txt ++ "</span>"
+
+
 
 -- 文字列を普通サイズで表示するHTMLタグに変換
 
@@ -145,6 +177,11 @@ toLargeFontText txt =
 toNormalFontText : String -> Html a
 toNormalFontText txt =
     span [ style [ ( "font-size", "100%" ) ] ] [ text txt ]
+
+
+toNormalFontTextString : String -> String
+toNormalFontTextString =
+    identity
 
 
 add : Int -> Int -> Int

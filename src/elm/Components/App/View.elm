@@ -40,7 +40,7 @@ viewAnnotatorButtons model =
 
 viewSpeakingButton : Html Msg
 viewSpeakingButton =
-    button [ class "listen-button",  onClick SpeakInputText ] [ text viewPhrases.listenButton ]
+    button [ class "listen-button", onClick SpeakInputText ] [ text viewPhrases.listenButton ]
 
 
 viewInputArea : Html Msg

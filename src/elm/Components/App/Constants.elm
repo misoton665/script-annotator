@@ -14,6 +14,7 @@ type alias AnnotatorIds =
     , intonationfinal : String
     , pausing : String
     , sounds : String
+    , wordStress : String
     }
 
 
@@ -27,6 +28,7 @@ annotatorIds =
     , intonationfinal = "intonationfinal"
     , pausing = "pausing"
     , sounds = "sounds"
+    , wordStress = "wordStress"
     }
 
 
@@ -78,11 +80,18 @@ vowelLinksAnnotator =
         hintHtml [ ( colorPallet "green", "Insert /j/" ), ( colorPallet "goldenrod", "Insert /w/" ), ( colorPallet "gray", "Connect" ) ]
 
 
+wordStressAnnotator : Annotator
+wordStressAnnotator =
+    Annotator annotatorIds.wordStress "Word Stress" <|
+        hintHtml [ ( colorPallet "green", "Insert /j/" ) ]
+
+
 annotators : List Annotator
 annotators =
     [ pausingAnnotator
     , intonationAnnotator
     , contentWordsAnnotator
+    , wordStressAnnotator
     , edSoundAnnotator
     , thSoundAnnotator
     , sSoundAnnotator

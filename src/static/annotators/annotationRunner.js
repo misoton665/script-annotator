@@ -55,7 +55,7 @@ function annotate(annotator, text) {
 }
 
 function containsRhythmAnnotator(annotators) {
-    return annotators.reduce((acc, x) => x.id === "rhythm" || acc, false);
+    return annotators.reduce((acc, x) => (x.id === "wordStress") || acc, false);
 }
 
 function annotateRhythm(app, text, callback) {
@@ -77,7 +77,7 @@ function runMulti(app, annos, text) {
 
     if (containsRhythmAnnotator(annos)) {
         return annotateRhythm(app, text, function (txt) {
-            return runMulti(app, annos.filter(x => x.id != "rhythm"), txt);
+            return runMulti(app, annos.filter(x => x.id != "wordStress"), txt);
         });
     }
 

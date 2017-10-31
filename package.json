@@ -35,5 +35,9 @@
     "webpack": "^2.3.1",
     "webpack-dev-server": "^2.4.2",
     "webpack-merge": "^4.1.0"
+  },
+  "dependencies": {
+    "compromise": "^11.0.2",
+    "nlp": "^0.0.0"
   }
 }
