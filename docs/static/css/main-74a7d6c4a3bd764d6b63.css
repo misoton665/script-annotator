@@ -5748,6 +5748,24 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+body {
+  margin: 0px;
+  padding: 0px; }
+
+textarea {
+  resize: none; }
+
+.page-header {
+  top: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.page-logo {
+  height: 64px;
+  width: 64px;
+  margin: 8px; }
+
 .hint {
   margin: 4px;
   padding: 8px;
@@ -5774,6 +5792,9 @@ button.close {
   100% {
     margin-top: 0px;
     opacity: 1; } }
+
+.listen-button {
+  background: #ffa500; }
 
 .main-frame {
   margin: 8px; }
@@ -5820,8 +5841,8 @@ button {
 
 .annotator-toggle-on {
   width: auto;
-  color: orangered;
-  border: solid 1px orangered;
+  color: #ffa500;
+  border: solid 1px #ffa500;
   border-radius: 4px; }
 
 .annotator-toggle-off {
@@ -5830,43 +5851,43 @@ button {
   border-radius: 4px; }
 
 .th1 {
-  background-color: lightcoral;
+  background-color: #aaccff;
   font-style: italic; }
 
 .th2 {
-  background-color: lightcyan;
+  background-color: #ffbb88;
   font-style: italic; }
 
 .th3 {
-  background-color: lightpink;
+  background-color: #aaee88;
   font-style: italic; }
 
 .ed1 {
-  background-color: #cc99ff;
+  background-color: #aaccff;
   font-style: italic; }
 
 .ed2 {
-  background-color: lightgreen;
+  background-color: #ffbb88;
   font-style: italic; }
 
 .ed3 {
-  background-color: lightseagreen;
+  background-color: #aaee88;
   font-style: italic; }
 
 .s1 {
-  background-color: lightsteelblue;
+  background-color: #aaccff;
   font-style: italic; }
 
 .s2 {
-  background-color: lightsalmon;
+  background-color: #ffbb88;
   font-style: italic; }
 
 .s3 {
-  background-color: lightskyblue;
+  background-color: #aaee88;
   font-style: italic; }
 
 .content_word {
-  font-style: bold;
+  font-weight: bold;
   font-size: 1.2em; }
 
 #answer {
