@@ -35,7 +35,7 @@ annotatorIds =
 thSoundAnnotator : Annotator
 thSoundAnnotator =
     Annotator annotatorIds.soundth "\"th\" sound" <|
-        hintHtml [ ( colorPallet "#aaccff", "/ð/ voiced" ), ( colorPallet "#ffbb88", "It will be cut!" ), ( colorPallet "#ddffbb", "/θ/ voiceless" ) ]
+        hintHtml [ ( colorPallet "#ffbb88", "/ð/ voiced" ), ( colorPallet "#aaccff", "/θ/ voiceless" ) ]
 
 
 edSoundAnnotator : Annotator
@@ -65,12 +65,12 @@ intonationAnnotator =
 pausingAnnotator : Annotator
 pausingAnnotator =
     Annotator annotatorIds.pausing "Pausing" <|
-        hintHtml [ ( symbolIcon "/" "#00f", "Short Pausing" ), ( symbolIcon "//" "#00f", "Middle Pausing" ), ( symbolIcon "///" "#00f", "Long Pausing" ) ]
+        hintHtml [ ( symbolIcon "/" "#00f", "Short Pause" ), ( symbolIcon "//" "#00f", "Middle Pause" ), ( symbolIcon "///" "#00f", "Long Pause" ) ]
 
 
 contentWordsAnnotator : Annotator
 contentWordsAnnotator =
-    Annotator "contentword" "ContentWord" <|
+    Annotator "contentword" "Content Word" <|
         hintHtml [ ( boldSymbolIcon "A↑" "#000", "Content Word" ) ]
 
 
@@ -83,7 +83,7 @@ vowelLinksAnnotator =
 wordStressAnnotator : Annotator
 wordStressAnnotator =
     Annotator annotatorIds.wordStress "Word Stress" <|
-        hintHtml [ ( colorPallet "green", "Insert /j/" ) ]
+        hintHtml [ ( colorPallet "#FF0", "Stress" ) ]
 
 
 annotators : List Annotator

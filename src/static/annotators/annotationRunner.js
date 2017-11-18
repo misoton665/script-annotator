@@ -54,20 +54,6 @@ function annotate(annotator, text) {
     }
 }
 
-function containsRhythmAnnotator(annotators) {
-    return annotators.reduce(function(acc, x) { 
-        return (x.id === "wordStress") || acc
-      }, false);
-}
-
-function annotateRhythm(app, text, callback) {
-    app.ports.annotateRhythm.send(text);
-
-    app.ports.onAnnotated.subscribe(function (text){
-        callback(text);
-    });
-}
-
 function run(app, annotator, text) {
     var result = annotate(annotator, text);
     
@@ -76,12 +62,6 @@ function run(app, annotator, text) {
 
 function runMulti(app, annos, text) {
     var result = text;
-
-    if (containsRhythmAnnotator(annos)) {
-        return annotateRhythm(app, text, function (txt) {
-            return runMulti(app, annos.filter(function(x){ return x.id != "wordStress"}), txt);
-        });
-    }
 
     annos.forEach(function (annotator){
         result = annotate(annotator, result);
