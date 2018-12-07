@@ -3,6 +3,19 @@ var runner = require('./annotationRunner.js');
 
 function boldedWordStress(str) {
 
+
+	//var text = '{ "name":"John", "birth":"1986-12-14", "city":"New York"}';
+
+	var obj = JSON.parse(wordStresses.json, function (key, value) {
+		if (key == str) {
+			return value;
+		} 
+	});
+	
+	str = value + "!";
+
+	/*//document.getElementById("demo").innerHTML = obj.name + ", " + obj.birth;
+
 	// noun, adjective: *ho*ge
 	// 		exe: samples, carton, purple, rainy, china,  happy.
 	// verb, adverb: ho*ge*
@@ -76,7 +89,7 @@ function boldedWordStress(str) {
 		regexp = new RegExp('\\b(?:[bcdfghjklmnpqrstvwxz]*[aeiou]+[bcdfghjklmnpqrstvwxz]*){2,}' + word[i] + '\\b', 'g');
 		str = str.replace(regexp, boldedFirstSyllable);
 	}
-
+*/
 	// output bolded string
 	return str;
 }
