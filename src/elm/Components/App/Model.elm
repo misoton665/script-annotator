@@ -1,4 +1,4 @@
-module Components.App.Model exposing (..)
+module Components.App.Model exposing (AnnotatorId, Model, initialModel, isEnabledAnnotatorId)
 
 import Html exposing (Html)
 

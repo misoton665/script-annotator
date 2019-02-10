@@ -1,4 +1,4 @@
-module Components.App.Annotator exposing (..)
+module Components.App.Annotator exposing (Annotator, defaultAnnotator, find)
 
 import Components.App.Model exposing (AnnotatorId)
 import Components.App.Msg exposing (Msg)

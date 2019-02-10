@@ -1,4 +1,4 @@
-port module Components.App.Ports exposing (..)
+port module Components.App.Ports exposing (annotateRhythm, appliedAnnotation, appliedMultiAnnotations, applyAnnotation, applyMultiAnnotations, onAnnotated, speakInputText, subscriptions)
 
 import Components.App.Model exposing (AnnotatorId)
 import Components.App.Msg exposing (Msg(AnnotateRhythm, AppliedAnnotation, AppliedMultiAnnotations))

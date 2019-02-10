@@ -1,4 +1,4 @@
-module Components.App.AnnotatorToggleView exposing (..)
+module Components.App.AnnotatorToggleView exposing (annotatorToggle)
 
 import Components.App.Annotator exposing (Annotator)
 import Components.App.Model exposing (Model, isEnabledAnnotatorId)
@@ -14,6 +14,7 @@ annotatorToggle annotator model =
         toggleCls =
             if isEnabledAnnotatorId annotator.id model then
                 "annotator-toggle-on"
+
             else
                 "annotator-toggle-off"
     in

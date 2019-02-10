@@ -1,4 +1,4 @@
-module Components.App.Constants exposing (..)
+module Components.App.Constants exposing (AnnotatorIds, ViewPhrases, annotatorIds, annotators, constantLinksAnnotator, contentWordsAnnotator, edSoundAnnotator, intonationAnnotator, pausingAnnotator, sSoundAnnotator, thSoundAnnotator, viewPhrases, vowelLinksAnnotator, wordStressAnnotator)
 
 import Components.App.Annotator exposing (Annotator)
 import Components.App.Hint exposing (boldSymbolIcon, colorPallet, hintHtml, symbolIcon)

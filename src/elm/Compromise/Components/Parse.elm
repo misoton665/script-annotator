@@ -1,4 +1,4 @@
-module Compromise.Components.Parse exposing (..)
+module Compromise.Components.Parse exposing (add, contentWordRegexes, isMarked, markText, nouns, parse, parseString, toLargeFontText, toLargeFontTextString, toLargeIfMarked, toLargeIfMarkedString, toNormalFontText, toNormalFontTextString, verbs)
 
 import Compromise
 import Html exposing (..)
@@ -6,6 +6,7 @@ import Html.Attributes exposing (..)
 import List.Extra
 import Regex exposing (HowMany(All), Regex, regex, replace)
 import String
+
 
 
 -- 入力された英文をHtmlに変換
@@ -104,6 +105,7 @@ markText txt =
                     in
                     if isMarked x.match then
                         x.match
+
                     else
                         "#" ++ x.match
                 )

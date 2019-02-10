@@ -1,4 +1,4 @@
-module Components.App.Msg exposing (..)
+module Components.App.Msg exposing (Msg(..))
 
 import Components.App.Model exposing (AnnotatorId)
 

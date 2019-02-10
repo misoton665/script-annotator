@@ -9,7 +9,7 @@ function boldedWordStress(str) {
 	// 		exe: relax, receive, direct, among, aside, between.
 
 	// iconic, graphic, hypertension, ...
-	function boldedSecondFromEndSyllable(match) {
+	/*function boldedSecondFromEndSyllable(match) {
 		var bolded_regexp = new RegExp('([bcdfghjklmnpqrstvwxz]+[aeiou]+[bcdfghjklmnpqrstvwxz]*)' + word[i]);
 		match = match.replace(bolded_regexp, "<span style=\"background: #FF0\">$1</span>" + word[i] );
 		return match;
@@ -47,6 +47,7 @@ function boldedWordStress(str) {
 	word[3]  = "ery";  word[4]  = "ible"; word[5]  = "ic";
 	word[6]  = "ics";  word[7]  = "ion";  word[8]  = "ia";
 	word[9]  = "ious"; word[10] = "ish";  word[11] = "osis";
+	
 	var numSecondFromEndSyllable = 12;
 	for (i=0; i<numSecondFromEndSyllable; i++) {
 		regexp = new RegExp('\\b(?:[bcdfghjklmnpqrstvwxz]*[aeiou]+[bcdfghjklmnpqrstvwxz]*)+' + word[i] + '\\b', 'g');
@@ -56,6 +57,7 @@ function boldedWordStress(str) {
 	word[0] = "ade"; word[1] = "ee"; word[2] = "eer";
 	word[3] = "ese"; word[4] = "ette"; word[5] = "que";
 	word[6] = "oon";
+	
 	var numWordEnding = 7;
 	for (i=0; i<numWordEnding; i++) {
 		regexp = new RegExp('\\b(?:[bcdfghjklmnpqrstvwxz]*[aeiou]+[bcdfghjklmnpqrstvwxz]*)+' + word[i] + '\\b', 'g');
@@ -64,6 +66,7 @@ function boldedWordStress(str) {
 
 	word[0] = "cy"; word[1] = "ty"; word[2] = "phy";
 	word[3] = "gy"; word[4] = "al";
+	
 	var numThirdFromEndSyllable = 5;
 	for (i=0; i<numWordEnding; i++) {
 		regexp = new RegExp('\\b(?:[bcdfghjklmnpqrstvwxz]*[aeiou]+[bcdfghjklmnpqrstvwxz]*)+' + word[i] + '\\b', 'g');
@@ -71,6 +74,7 @@ function boldedWordStress(str) {
 	}
 
 	word[0] = "er"; word[1] = "ly";
+	
 	var numFirstSyllable = 2;
 	for (i=0; i<numFirstSyllable; i++) {
 		regexp = new RegExp('\\b(?:[bcdfghjklmnpqrstvwxz]*[aeiou]+[bcdfghjklmnpqrstvwxz]*){2,}' + word[i] + '\\b', 'g');
@@ -78,6 +82,37 @@ function boldedWordStress(str) {
 	}
 
 	// output bolded string
+	
+	*/
+	
+	var WSjson = require('./wordStresses.json');
+	var stresses = 0;
+	var syllables = 1;
+	//var m = WSjson["frowning"]["syllables"].length;
+	
+	var res = str.split(" ");
+	
+	res.forEach(function(element){
+		if (element.length > 2){			
+			if (WSjson[element]){							
+				str = str.replace(element, stressSearch(element));				
+			}				
+		}
+	});
+	
+	function stressSearch(word) {
+		var newWord = word;
+		
+		WSjson[word][stresses].forEach(function(element, index, array) {
+			var syll = WSjson[word][syllables][index];
+			if (element == 1) {
+				newWord = newWord.replace(syll, "<span style=\"background: #FF0\">$&</span>");
+			}
+		});
+		
+		return newWord;
+	}
+	
 	return str;
 }
 
