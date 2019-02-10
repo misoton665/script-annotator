@@ -94,7 +94,8 @@ function boldedWordStress(str) {
 	
 	res.forEach(function(element){
 		if (element.length > 2){			
-			if (WSjson[element]){							
+			if (WSjson[element]){	
+				
 				str = str.replace(element, stressSearch(element));				
 			}				
 		}
