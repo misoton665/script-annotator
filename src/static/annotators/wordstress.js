@@ -93,20 +93,23 @@ function boldedWordStress(str) {
 	var res = str.split(" ");
 	
 	res.forEach(function(element){
-		if (element.length > 2){			
-			if (WSjson[element]){	
-				
-				str = str.replace(element, stressSearch(element));				
+		if (element.length > 2){
+			var word = element.toLowerCase(); 			
+			if (WSjson[word]){	
+				//if (WSjson[word][syllables].length > 1){
+					str = str.replace(element, stressSearch(element));
+				//}								
 			}				
 		}
 	});
 	
 	function stressSearch(word) {
-		var newWord = word;
+		var newWord = word.toLowerCase();
 		
-		WSjson[word][stresses].forEach(function(element, index, array) {
-			var syll = WSjson[word][syllables][index];
+		WSjson[word.toLowerCase()][stresses].forEach(function(element, index, array) {
+			var syll = WSjson[word.toLowerCase()][syllables][index];
 			if (element == 1) {
+				//ignorecase??
 				newWord = newWord.replace(syll, "<span style=\"background: #FF0\">$&</span>");
 			}
 		});
