@@ -96,9 +96,9 @@ function boldedWordStress(str) {
 		if (element.length > 2){
 			var word = element.toLowerCase(); 			
 			if (WSjson[word]){	
-				//if (WSjson[word][syllables].length > 1){
+				if (WSjson[word][syllables].length > 1){
 					str = str.replace(element, stressSearch(element));
-				//}								
+				}								
 			}				
 		}
 	});
