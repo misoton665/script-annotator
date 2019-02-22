@@ -88,33 +88,41 @@ function boldedWordStress(str) {
 	var WSjson = require('./wordStresses.json');
 	var stresses = 0;
 	var syllables = 1;
-	//var m = WSjson["frowning"]["syllables"].length;
 	
-	var res = str.split(" ");
+	var res = str.split(/\W+/);
 	
 	res.forEach(function(element){
-		if (element.length > 2){
-			var word = element.toLowerCase(); 			
+		var word = element.toLowerCase(); 
+		
+		//
+		if (word.length > 2){
+						
 			if (WSjson[word]){	
 				if (WSjson[word][syllables].length > 1){
 					str = str.replace(element, stressSearch(element));
+					
 				}								
 			}				
 		}
 	});
 	
-	function stressSearch(word) {
-		var newWord = word.toLowerCase();
+	
+	function stressSearch(word) {		
 		
-		WSjson[word.toLowerCase()][stresses].forEach(function(element, index, array) {
+		var retWord = word;
+		
+		WSjson[word.toLowerCase()][stresses].forEach(function(element, index, array) {			
+			
 			var syll = WSjson[word.toLowerCase()][syllables][index];
+			var idx = retWord.toLowerCase().indexOf(syll);
 			if (element == 1) {
-				//ignorecase??
-				newWord = newWord.replace(syll, "<span style=\"background: #FF0\">$&</span>");
+				
+				retWord = retWord.substr(0, idx) + "<span style=\"background: #FF0\">" + retWord.substr(idx, syll.length) + "</span>" + retWord.substr(idx + syll.length);
 			}
 		});
 		
-		return newWord;
+		return retWord;
+		
 	}
 	
 	return str;
@@ -124,5 +132,5 @@ module.exports = {
     id: 'wordStress',
     run: boldedWordStress,
     type: runner.types.word,
-    priority: 0
+    priority: 15
 };
