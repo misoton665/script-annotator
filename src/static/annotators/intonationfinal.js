@@ -16,7 +16,7 @@ function myfunc(sentence) {
     if (bun[i] == '.' || bun[i] == '?' || bun[i] == '!') {
       flg = 2;
       sen = bun.slice(bunlen, i + 1);
-      bunlen = i + 2;
+      bunlen = i + 1;
       tmp += sen;
 
       var tango = sen.split(" ");
@@ -34,6 +34,13 @@ function myfunc(sentence) {
   }
 
   if (flg == 0) tmp += bun.slice(bunlen);
+
+	tmp = tmp.replace(/(\sand)(\W*)/gi, ' ⤴️ and$2'); 
+	tmp = tmp.replace(/(\sbut)(\W*)/gi, ' ⤴️ but$2');
+	tmp = tmp.replace(/(\sso)(\W*)/gi, ' ⤴️ so$2');
+	tmp = tmp.replace(/(\sbecause)(\W*)/gi, ' ⤴️ because$2');
+	tmp = tmp.replace(/(\sor)(\W*)/gi, ' ⤴️ or$2');
+  
   return tmp;
 
 }

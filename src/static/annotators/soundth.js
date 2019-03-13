@@ -3,7 +3,8 @@
 var runner = require('./annotationRunner.js');
 
 function checkPron(word_input) {
-  var reeth = /([Tt]he$)|([Tt]her$)|([Tt]h[aeiou][^aeiou])/;
+
+  var reeth = /([Tt]he$)|([Tt]her$)|([Tt]h[aeiou][^aeiou])|ith|[Tt]he|[Tt]hou/;
   var renoteth = /([Tt]h.n)/
   var reths = /[Tt]hs$/;
   var reth = /[Tt]h/;

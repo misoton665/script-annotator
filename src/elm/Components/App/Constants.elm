@@ -65,7 +65,7 @@ intonationAnnotator =
 pausingAnnotator : Annotator
 pausingAnnotator =
     Annotator annotatorIds.pausing "Pausing" <|
-        hintHtml [ ( symbolIcon "/" "#00f", "Short Pause" ), ( symbolIcon "//" "#00f", "Middle Pause" ), ( symbolIcon "///" "#00f", "Long Pause" ) ]
+        hintHtml [ ( symbolIcon "/" "#00f", "Short Pause" ), ( symbolIcon "//" "#00f", "Mid Pause" ), ( symbolIcon "///" "#00f", "Long Pause" ) ]
 
 
 contentWordsAnnotator : Annotator
