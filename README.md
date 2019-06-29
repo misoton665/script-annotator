@@ -17,4 +17,3 @@ $ yarn start
 $ yarn run build
 // The code is generated to docs/
 ```
-//mp
