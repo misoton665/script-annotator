@@ -1,4 +1,4 @@
-module Compromise exposing (..)
+module Compromise exposing (adjectives, adverbs, beVerbs, causativeVerbs, generalVerbs, generalVerbs_, nouns, tailOrEmpty, verbs)
 
 import Array
 import Native.Compromise

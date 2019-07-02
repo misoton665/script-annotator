@@ -1,4 +1,4 @@
-module Components.App.View exposing (..)
+module Components.App.View exposing (view, viewAnnotationHints, viewAnnotatorButtons, viewButtonHistory, viewInputArea, viewPageTitle, viewResultArea, viewSpeakingButton)
 
 import Components.App.Annotator as Annotator exposing (Annotator)
 import Components.App.AnnotatorToggleView exposing (annotatorToggle)

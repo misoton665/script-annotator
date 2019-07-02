@@ -9,7 +9,7 @@ function annotate(text) {
   regexs[2] = /(a|i|o|r|u|w|y|be|ee|he|re|ue|igh|we|lough|th[a-z]+gh|^[2-4]|[^1][2-4]|[2-9]0) (.)/gmi;
 
   colors = [];
-  colors[0] = "Red";
+  colors[0] = "Green";
   colors[1] = "Goldenrod";
   colors[2] = "Gray";
 

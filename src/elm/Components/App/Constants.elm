@@ -1,4 +1,4 @@
-module Components.App.Constants exposing (..)
+module Components.App.Constants exposing (AnnotatorIds, ViewPhrases, annotatorIds, annotators, constantLinksAnnotator, contentWordsAnnotator, edSoundAnnotator, intonationAnnotator, pausingAnnotator, sSoundAnnotator, thSoundAnnotator, viewPhrases, vowelLinksAnnotator, wordStressAnnotator)
 
 import Components.App.Annotator exposing (Annotator)
 import Components.App.Hint exposing (boldSymbolIcon, colorPallet, hintHtml, symbolIcon)
@@ -65,7 +65,7 @@ intonationAnnotator =
 pausingAnnotator : Annotator
 pausingAnnotator =
     Annotator annotatorIds.pausing "Pausing" <|
-        hintHtml [ ( symbolIcon "/" "#00f", "Short Pause" ), ( symbolIcon "//" "#00f", "Middle Pause" ), ( symbolIcon "///" "#00f", "Long Pause" ) ]
+        hintHtml [ ( symbolIcon "/" "#00f", "Short Pause" ), ( symbolIcon "//" "#00f", "Mid Pause" ), ( symbolIcon "///" "#00f", "Long Pause" ) ]
 
 
 contentWordsAnnotator : Annotator

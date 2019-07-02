@@ -81,4 +81,3 @@ module.exports = {
     runMulti: runMulti,
     types: types
 }
-

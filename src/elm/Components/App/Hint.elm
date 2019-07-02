@@ -1,4 +1,4 @@
-module Components.App.Hint exposing (..)
+module Components.App.Hint exposing (boldSymbolIcon, colorPallet, hintHtml, partialHintHtml, symbolIcon)
 
 import Components.App.Msg exposing (Msg)
 import Html exposing (Html, div, span, text)

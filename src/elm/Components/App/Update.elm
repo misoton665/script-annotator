@@ -1,4 +1,4 @@
-module Components.App.Update exposing (..)
+module Components.App.Update exposing (toggleAnnotator, update)
 
 import Components.App.Annotator as Annotator
 import Components.App.Constants exposing (annotatorIds)
@@ -46,5 +46,6 @@ toggleAnnotator id model =
     in
     if isEnabled then
         beDisable
+
     else
         beEnable
